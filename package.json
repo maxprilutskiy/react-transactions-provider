@@ -1,6 +1,6 @@
 {
   "name": "react-transactions-provider",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Transactions provider for React",
   "scripts": {
     "build": "tsc",
