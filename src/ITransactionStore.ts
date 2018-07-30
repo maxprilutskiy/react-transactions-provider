@@ -13,4 +13,5 @@ export default interface ITransactionStore {
   getFutureTransactions(): ITransaction[];
   executeTransaction(tx?: ITransaction): void;
   rollbackTransaction(): void;
+  clear(): void;
 }

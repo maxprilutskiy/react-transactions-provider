@@ -42,6 +42,16 @@ export default class TransactionProvider extends React.Component<ITransactionPro
   private _transactionStore = null;
 
   /**
+   * Clear transaction store
+   *
+   * @memberof TransactionProvider
+   */
+  clear = (): void => {
+    this.pastTransactions = [];
+    this.futureTransactions = [];
+  }
+
+  /**
    * Get all executed transactions
    *
    * @memberof TransactionProvider
@@ -88,6 +98,7 @@ export default class TransactionProvider extends React.Component<ITransactionPro
       getFutureTransactions: this.getFutureTransactions,
       executeTransaction: this.executeTransaction,
       rollbackTransaction: this.rollbackTransaction,
+      clear: this.clear,
     };
     return {
       transactionStore: {
