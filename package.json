@@ -1,6 +1,6 @@
 {
   "name": "react-transactions-provider",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Transactions provider for React",
   "scripts": {
     "build": "npm run build:es && npm run build:commonjs",
