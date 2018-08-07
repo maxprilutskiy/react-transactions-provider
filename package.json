@@ -3,12 +3,15 @@
   "version": "0.0.4",
   "description": "Transactions provider for React",
   "scripts": {
-    "build": "tsc",
-    "clean": "rm -rf dist node_modules",
+    "build": "npm run build:es && npm run build:commonjs",
+    "build:es": "tsc -p ./tsconfig.es.json",
+    "build:commonjs": "tsc -p ./tsconfig.commonjs.json",
+    "clean": "rm -rf dist es node_modules",
     "prepublish": "npm run build"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "module": "es/index.js",
   "files": [
     "dist",
     "package.json",
