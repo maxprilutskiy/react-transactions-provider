@@ -15,6 +15,8 @@ export type MapTransactionStoreToProps<P> = (txStore: ITransactionStore, ownProp
 export default function withTransactions<P>(mapTransactionStoreToProps?: MapTransactionStoreToProps<P>) {
   return function (WrappedComponent: React.ComponentType<P>) {
     return class extends React.Component<P> {
+      static displayName = `withTransactions(${getDisplayName(WrappedComponent)})`;
+
       static contextTypes = {
         transactionStore: PropTypes.any,
       };
@@ -36,3 +38,6 @@ export default function withTransactions<P>(mapTransactionStoreToProps?: MapTran
   };
 }
 
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component';
+}
